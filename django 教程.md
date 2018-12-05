@@ -167,6 +167,10 @@ list_per_page = 3 #每页显示多少数据
 
 model_icon = "fa fa-id-card#[图标] 
 
+list_editable=["id"]# 直接在列表直接修改
+
+refresh_times=[2,5]# 选择刷新时间
+
 - 通过外键同一页面添加信息
 
   ```python
@@ -194,7 +198,16 @@ model_icon = "fa fa-id-card#[图标]
           return qs
   ```
 
+- Excel导入
 
+```
+# xadmin
+import_excel=True
+def post(self, request, *args, **kwargs):
+    if 'excel' in request.FILES:
+        pass
+    return super(Goodsdmin, self).post(request, args, kwargs)
+```
 
 #### model 数据表
 
@@ -225,4 +238,4 @@ def __str__(self):
 
 
 
-
+![1544027204508](C:\Users\Administrator\Documents\GitHub\study\assets\1544027204508.png)
