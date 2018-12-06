@@ -167,10 +167,11 @@ list_per_page = 3 #每页显示多少数据
 
 model_icon = "fa fa-id-card#[图标] 
 
-list_editable=["id"]# 直接在列表直接修改
+list_editable=["id"]# 直接在列表直接修改 #自定义表单后出现BUG  重复输入验证
 
 refresh_times=[2,5]# 选择刷新时间
 
+show_detail_fields ["外键字段名"]|show_all_rel_details# 详细外键信息 BUG 需加主键名 不能筛选显示字段
 
 
 
