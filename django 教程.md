@@ -30,21 +30,21 @@ pip install -r 文件
 ### 目录结构
 
 - 项目名     **项目文件**
-        - apps    应用文件（注册）
-            -  admin.py 
-            -  apps.py
-            -  models.py  数据管理
-            -  tests.py
-            -  views.py
-        -  log       日志文件
-        -  media   用户上传文件
-        -  static     静态文件
-        -  extra_apps	xadmin文件
-        -  templactes  模板文件 html
+    ​    - apps    应用文件（注册）
+    ​        -  admin.py 
+    ​        -  apps.py
+    ​        -  models.py  数据管理
+    ​        -  tests.py
+    ​        -  views.py
+    ​    -  log       日志文件
+    ​    -  media   用户上传文件
+    ​    -  static     静态文件
+    ​    -  extra_apps	xadmin文件
+    ​    -  templactes  模板文件 html
 
     ​    -  项目管理文件
-            - settings.py  配置文件
-            - urls  配置入口
+    ​        - settings.py  配置文件
+    ​        - urls  配置入口
 
 将apps,media, static 路径 加入全局搜索路径方法 
 
@@ -171,7 +171,6 @@ list_editable=["id"]# 直接在列表直接修改
 
 refresh_times=[2,5]# 选择刷新时间
 
-show_detail_fields ["外键字段名"]|show_all_rel_details# 详细外键信息
 
 
 

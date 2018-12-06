@@ -6,13 +6,13 @@ from  .models import *
 from django.db.models import Max
 from django.http import HttpResponse
 from django.utils.safestring import mark_safe
-class OrderForm(ModelForm):
-    muchs = forms.IntegerField(
-        min_value=8,
-        error_messages={
-            "min_value": "用户名最长为16位",
-            "required": "用户名不能为空"
-        },)
+# class OrderForm(ModelForm):
+#     muchs = forms.IntegerField(
+#         min_value=8,
+#         error_messages={
+#             "min_value": "用户名最长为16位",
+#             "required": "用户名不能为空"
+#         },)
 class Shopline():
     exclude = ["bianma"]
     model=Shop
@@ -50,6 +50,7 @@ class Shopdmin(object):
     list_filter = ["good_id__user_id"]
     search_fields = ["good_id__user_id"]
     exclude=["bianma"]
+    show_detail_fields =["good_id"]
 
 
     def save_models(self):
@@ -65,9 +66,9 @@ class Orderdmin(object):
     exclude = ["pici"]
     list_filter = ["bianma__bianma"]
     search_fields = ["bianma__bianma"]
-    show_all_rel_details= True
+    list_editable=["bianma"]
 
-    form=OrderForm
+    # form=OrderForm
 
     def save_models(self):
         #在保存课程的时候统计课程机构的课程数
