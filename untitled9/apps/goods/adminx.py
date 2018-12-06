@@ -33,7 +33,9 @@ class Goodsdmin(object):
     def imgs(self,request):
         a=request.image
         return mark_safe("<a href = 'https:www.baidu.com' target='_blank'><img src=/media/" + request.image.name + " class='field_img'></a>")
-    list_display=["id","goods_id","user_id","add_time","imgs"]
+    list_display=["id","good_id","user_id","add_time","imgs"]
+    list_filter = ["good_id", "add_time"]
+
     inlines = [Shopline]
     import_excel=True
     def post(self, request, *args, **kwargs):
@@ -45,6 +47,8 @@ xadmin.site.register(Goods,Goodsdmin)
 
 class Shopdmin(object):
     list_display=["good_id","color","size","shangjia_time","image","bianma"]
+    list_filter = ["good_id__user_id"]
+    search_fields = ["good_id__user_id"]
     exclude=["bianma"]
 
 
@@ -57,8 +61,12 @@ class Shopdmin(object):
 xadmin.site.register(Shop,Shopdmin)
 
 class Orderdmin(object):
-    list_display=["bianma","muchs","pici"]
+    list_display=["id","bianma","muchs","pici"]
     exclude = ["pici"]
+    list_filter = ["bianma__bianma"]
+    search_fields = ["bianma__bianma"]
+    show_all_rel_details= True
+
     form=OrderForm
 
     def save_models(self):

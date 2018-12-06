@@ -2,12 +2,12 @@ from django.db import models
 from datetime import datetime
 # Create your models here.
 class Goods(models.Model):
-    goods_id = models.CharField( max_length=10,verbose_name=u"商品编码")
+    good_id = models.CharField( max_length=10,verbose_name=u"商品编码")
     user_id = models.CharField( max_length=10,verbose_name=u"设计师")
     add_time = models.DateTimeField(default=datetime.now, verbose_name=u"添加时间")
     image = models.ImageField(upload_to="media/image/%Y/%m", max_length=100)
     def  __str__(self):
-        return self.goods_id
+        return self.good_id
     class Meta:
         verbose_name = u"商品编码"
         verbose_name_plural = verbose_name

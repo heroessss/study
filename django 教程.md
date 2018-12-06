@@ -171,6 +171,10 @@ list_editable=["id"]# 直接在列表直接修改
 
 refresh_times=[2,5]# 选择刷新时间
 
+show_detail_fields ["外键字段名"]|show_all_rel_details# 详细外键信息
+
+
+
 - 通过外键同一页面添加信息
 
   ```python
