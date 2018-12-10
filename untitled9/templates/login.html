@@ -1,32 +1,45 @@
 {% extends 'xadmin/base_site.html' %}
 {% block content %}
-<form action="/home/">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputFile">File input</label>
-    <input type="file" id="exampleInputFile">
-    <p class="help-block">Example block-level help text here.</p>
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Check me out
-    </label>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
+    <script src="/static/echarts.min.js"></script>
 
+    <div id="main" style="width: 600px;height:400px;"></div>
+ <div id="main" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
 
-
-
-
-
+        // 指定图表的配置项和数据
+       var option = {
+    series: {
+        type: 'sunburst',
+        data: [{
+            name: 'A',
+            value: 10,
+            children: [{
+                value: 3,
+                name: 'Aa'
+            }, {
+                value: 5,
+                name: 'Ab'
+            }]
+        }, {
+            name: 'B',
+            children: [{
+                name: 'Ba',
+                value: 4
+            }, {
+                name: 'Bb',
+                value: 2
+            }]
+        }, {
+            name: 'C',
+            value: 3
+        }]
+    }
+};
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
 
 
 {% endblock %}
