@@ -31,7 +31,7 @@ class GlobalSettings(object):
     def get_site_menu(self):
         return (
             {'title': 'ERP管理系统',
-             'perm': self.get_model_perm(Goods, 'view'),
+             # 'perm': self.get_model_perm(Goods, 'view'),
              'menus': (
                  {
                      'title': '会员延期',
