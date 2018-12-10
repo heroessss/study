@@ -27,6 +27,20 @@ xadmin.site.register(views.BaseAdminView,BaseSetting)
 class GlobalSettings(object):
     site_title = u"慕学后台管理系统"
     site_footer = u"慕学在线网"
+
+    def get_site_menu(self):
+        return (
+            {'title': 'ERP管理系统',
+             'perm': self.get_model_perm(Goods, 'view'),
+             'menus': (
+                 {
+                     'title': '会员延期',
+                     'url': '/xadmin/test_view/',
+                     # 'perm': self.get_model_perm(ZVipbalanceList, 'view'),
+                 },
+             )
+             },
+        )
 xadmin.site.register(views.CommAdminView, GlobalSettings)
 
 class Goodsdmin(object):
@@ -80,3 +94,8 @@ class Orderdmin(object):
             obj.pici = 1
         obj.save()
 xadmin.site.register(Order,Orderdmin)
+import xadmin
+
+from .views import TestView
+
+xadmin.site.register_view(r'test_view/$', TestView, name='for_test')
