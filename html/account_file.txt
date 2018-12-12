@@ -1,0 +1,5 @@
+﻿zhang	张云辉	888888	normal	80000	
+lucas	刘德华	888888	normal	77390	
+jackey	陈港生	888888	locked	0	
+ryan	张瑞恩	888888	normal	50000	
+alix	史莱克	888888	normal	0﻿	

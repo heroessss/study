@@ -60,3 +60,24 @@ class Room:
   ```
 
 - staticmathod  # 如果一个函数 既和对象没有关系 也和类没有关系 那么就用staticmethod将这个函数变成一个静态方法
+
+### 单例模式
+
+- \__new__ 方式 
+
+```python
+class Person:
+    _fdsf=False
+    def __new__(cls, *args, **kwargs):
+        if cls._fdsf:
+            cls._fdsf=super(Person,cls).__new__(cls, *args, **kwargs)
+        return  cls._fdsf
+A=Person()
+B=Person()
+print(id(A),id(B))
+> 1377307744 1377307744
+```
+
+- 模块方式
+
+  python 模块加载 只加载一遍

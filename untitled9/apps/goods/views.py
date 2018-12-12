@@ -5,6 +5,5 @@ class TestView(CommAdminView):
     def get(self, request):
         context = super().get_context()
         title = "会员延期"
-        context["breadcrumbs"].append({'url': '/cwyadmin/', 'title': title})
         context["title"] = title
         return render(request, 'login.html', context)
